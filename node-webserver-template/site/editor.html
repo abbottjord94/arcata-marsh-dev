@@ -1,0 +1,42 @@
+<html>
+
+	<head>
+		<title>Scavenger Hunt Question Editor</title>
+		<script>
+			window.onload = function() {
+				fetch("/retrieveQuestions").then(function(response) {
+					console.log(response.json());
+				});
+			}
+			function sendQuestion() {
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h1>Scavenger Hunt Question Editor</h1>
+		
+		<label for = "questionSelection">Select Question to Edit:</label>
+		<select name = "questionSelection">
+			<option value = "none"> </option>
+		</select><br />
+		<label for = "questionInput">Question Text</label><br />
+		<textarea name = "questionInput" rows = "10" cols = "50"></textarea><br />
+		<label for = "firstAnswer">Answer 1</label>
+		<input type = "text" name = "firstAnswer"></input><br />
+		<label for = "secondAnswer">Answer 2</label>
+		<input type = "text" name = "secondAnswer"></input><br />
+		<label for = "thirdAnswer">Answer 3</label>
+		<input type = "text" name = "thirdAnswer"></input><br />
+		<label for = "fourthAnswer">Answer 4</label>
+		<input type = "text" name = "fourthAnswer"></input><br /><br />
+		
+		<label for = "latitude">Latitude</label>
+		<input type = "text" name = "latitude"></input>
+		<label for = "longitude">Longitude</label>
+		<input type = "text" name = "longitude"></input><br /><br />
+		<button type = "button" onclick = "sendQuestion()">Add/Edit Questions</button>
+	</body>
+
+</html>
